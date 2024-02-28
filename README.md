@@ -1,4 +1,4 @@
-# Soluciones Ópticas - Entrega 1
+# Soluciones Ópticas - Entrega 2
 ## CoderHouse
 ### React + Vite
 
