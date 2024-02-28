@@ -4,8 +4,8 @@ export const NavBar = () => {
     <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                    <img src="./src/assets/so-logo-simple-chico.png" alt="Logo" width="40" height="40" className="d-inline-block align-text-top" />
+                <a className="navbar-brand" href="/">
+                    <img src="/so-logo-simple-chico.png" alt="Logo" width="50" height="50" className="d-inline-block align-text-top" />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

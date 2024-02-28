@@ -10,13 +10,15 @@ const App = () => {
     <>
       <BrowserRouter>
           <NavBar />
-        <Routes>
-          <Route path="/" element={<Home greeting={'Bienvenido a Soluciones Ópticas!!!'}/>}/>
-          <Route path="/product" element={<ItemListContainer />}/>
-          <Route path="/item/:id" element={<ItemDetailContainer />}/>
-          <Route path="/category/:category" element={<ItemListContainer/>}/>
-          <Route path="*" element={<Error message={'Error 404'}/>}/>
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home greeting={'Bienvenido a Soluciones Ópticas!!!'}/>}/>
+            <Route path="/product" element={<ItemListContainer />}/>
+            <Route path="/item/:id" element={<ItemDetailContainer />}/>
+            <Route path="/category/:category" element={<ItemListContainer/>}/>
+            <Route path="*" element={<Error message={'Error 404'}/>}/>
+          </Routes>
+        </div>
       </BrowserRouter>
     </>
   )
