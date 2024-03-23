@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ItemCount = ({ stock, initial = 1 }) => {
+export const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [count, setCount] = useState(initial);
 
   const increment = () => {
@@ -20,15 +20,17 @@ export const ItemCount = ({ stock, initial = 1 }) => {
   return (
     <div className="d-flex flex-column col-2 justify-content-center align-content-center p-4">
       <div>
-        <button className="btn btn-secondary mx-3" onClick={increment}>
-          +
-        </button>
-        <strong>{count}</strong>
         <button className="btn btn-secondary mx-3" onClick={decrement}>
           -
         </button>
+        <strong>{count}</strong>
+        <button className="btn btn-secondary mx-3" onClick={increment}>
+          +
+        </button>
       </div>
-      <button className="btn btn-success mt-2" >Agregar al carrito</button>
+      <button className="btn btn-success mt-2" onClick={() => onAdd(count)}>
+        Agregar al carrito
+      </button>
     </div>
   );
 }

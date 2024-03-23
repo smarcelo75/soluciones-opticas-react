@@ -1,6 +1,8 @@
-# Soluciones Ópticas - Entrega 2
+# Soluciones Ópticas - Entrega Final
 ## CoderHouse
 ### React + Vite
+
+#### Marce Serrano
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
