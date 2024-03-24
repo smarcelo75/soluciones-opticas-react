@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../config/firebaseConfig";
+import Swal from "sweetalert2";
 
 export const Checkout = () => {
     const { cart, total, clearCart } = useContext(CartContext);
@@ -42,26 +43,24 @@ export const Checkout = () => {
             date: serverTimestamp(),
         };
 
-        // Agregar la orden de compra en la base de datos
         const order = await addDoc(collection(db, "orders"), newOrder);
 
-        // Vaciar formulario
         setFormCheckout({
             name: "",
             phone: 0,
             email: "",
         });
 
-
-        // Vaciar el carrito
         clearCart();
 
-        // Setear el orderId
         setOrderId(order.id);
-
     };
 
     if (orderId) {
+        Swal.fire({
+            icon: "success",
+            title: `Su ID de orden de compra es ${orderId}`
+        });
         return <h3>Su ID de orden de compra es {orderId} </h3>
     }
 
