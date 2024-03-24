@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../config/firebaseConfig";
@@ -61,7 +62,14 @@ export const Checkout = () => {
             icon: "success",
             title: `Su ID de orden de compra es ${orderId}`
         });
-        return <h3>Su ID de orden de compra es {orderId} </h3>
+        return (
+            <div className="container d-flex justify-content-center m-5">
+                <h3>Su ID de orden de compra es {orderId} </h3>
+                <Link to="/product">
+                    <button className="ms-2 btn btn-success">Seguir comprando</button>
+                </Link>
+            </div>
+        )
     }
 
     return (
